@@ -5,7 +5,7 @@ import { deleteFormData, uploadImgElement } from './form.js';
 const closeButtons = document.querySelectorAll('.cancel');
 
 const onModalEscKeydown = (evt) => {
-  if (isEscapeKey(evt) && !document.activeElement.classList.contains('focusable')) {
+  if (isEscapeKey(evt) && !document.activeElement.classList.contains('focusable') && document.querySelector('.error') === null) {
     evt.preventDefault();
     closeModal();
   }
@@ -33,11 +33,8 @@ function closeModal() {
     uploadImgElement.classList.add('hidden');
     deleteFormData();
   }
-
   document.body.classList.remove('modal-open');
   document.removeEventListener('keydown', onModalEscKeydown);
 }
 
 export {openModal, closeModal, onPopupCloseButton};
-
-
