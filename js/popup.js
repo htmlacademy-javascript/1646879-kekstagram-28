@@ -23,14 +23,14 @@ const popupDataError = (message) => {
 const onPopupEscKeydown = (evt) => {
   if (isEscapeKey(evt)) {
     evt.preventDefault();
-    closePopap();
+    closePopup();
   }
 };
 
 const onPopupCloseClick = (evt) => {
   if (evt.target.className === 'error' || evt.target.className === 'error__button' || evt.target.className === 'success' || evt.target.className === 'success__button') {
     evt.preventDefault();
-    closePopap();
+    closePopup();
   }
 };
 
@@ -40,7 +40,7 @@ const createPopup = (popup) => {
   document.addEventListener('click', onPopupCloseClick);
 };
 
-function closePopap () {
+function closePopup () {
   if (errorContent) {
     errorContent.remove();
   }

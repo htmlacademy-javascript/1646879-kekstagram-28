@@ -38,6 +38,11 @@ const deleteFormData = () => {
   uploadFileElement.value = '';
   hashtagsElement.value = '';
   descriptionElement.value = '';
+  document.querySelectorAll('.error__field-wrapper').forEach((element) => {
+    if (element.textContent.length > 0) {
+      element.textContent = '';
+    }
+  });
 };
 
 const onUserFormOpen = () => {
